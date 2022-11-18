@@ -1,0 +1,22 @@
+class Solution {
+    public int maxSubArray(int[] nums) {
+        //**************KADANE'S ALGORITHM' *****************/
+        int i;
+        int sum=0;
+        int max=nums[0];
+        //three steps alg0
+        for(i=0;i<nums.length;i++)
+        {
+            //1
+            sum+=nums[i];
+            //2
+            max=Math.max(max,sum);
+            //3
+            if(sum<0)
+            {
+                sum=0;
+            }
+        }
+        return max;
+    }
+}
